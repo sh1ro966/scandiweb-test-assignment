@@ -34,7 +34,7 @@ if ($SKU and $name and $price and $weight) {
 
 $conn->query($sql);
 mysqli_close($conn);
-header('Location: add_product.html');
+header('Location: products.php');
 die();
     }
 

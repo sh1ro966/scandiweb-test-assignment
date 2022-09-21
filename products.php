@@ -14,7 +14,7 @@
                 <h1>Product List</h1>
             <div class="header-buttons">
                 <button class="header-addBtn"><a href="add_product.html">ADD</a></button>
-                <input type="button" id="delete-product-btn" name='delete' value='MASS DELETE' class="header-deleteBtn">
+                <!-- <input type="submit" id="delete-product-btn" name='delete' value='MASS DELETE' class="header-deleteBtn" action="delete.php"> -->
             </div>
         <hr> 
     </div>
@@ -28,29 +28,19 @@
     $result=$connect->query($sql);
     if($result->num_rows>0){
       while($row=$result->fetch_assoc()){
-        $SKU = $row['SKU'];
+        $SKU=mysqli_real_escape_string($connect,$row['SKU']);
         echo "<div class='main-item'>";
-        echo "<input type='checkbox' name='checkbox[]' value='.$SKU' class='delete-checkbox'>";
+        echo "<form action='delete.php' method='POST'>";
+        echo "<input type='checkbox' name='checkbox[]' value='".$row['SKU']."' class='delete-checkbox'>";
         echo "<div class='item-sku'>".$row['SKU']."</div>";
         echo "<div class='item-name'>".$row['NAME']."</div>";
         echo "<div class='item-price'>".$row['PRICE']."</div>";
         echo "<div class='item-info'>".$row['INFO']."</div>";
         echo "</div>";
       }
-    }
-
-    if(isset($_POST['delete'])){
-
-        if(isset($_POST['checkbox'])){
-          foreach($_POST['checkbox'] as $deleteid){
-            $deleteUser = "DELETE FROM products WHERE SKU=".$deleteid;
-            mysqli_query($connect,$deleteUser);
-          }
-        }
-       
-      }
-    
-        
+      echo "<input type='submit' id='delete-product-btn' name='delete' value='MASS DELETE' class='main-deleteBtn' action='POST'>";
+      echo "</form>";
+    }    
     mysqli_close($connect);
      ?>
         </div>
