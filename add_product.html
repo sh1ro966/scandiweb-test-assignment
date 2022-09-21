@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/add_style.css">
+    <title>Scandiweb Assgiment</title>
+</head>
+<body>
+    <header class="header">
+    <div class="container">
+                <h1>Product List</h1>
+            <div class="header-buttons">
+                <button value='CANCEL' name='cance' class="header-cancelBtn"><a href="products.php">CANCEL</a></button>
+            </div>
+        <hr> 
+    </div>
+    </header>
+    <main>
+        <div class="container">
+        <form class="main-form" id="product_form" action="add.php" name="add" method="post">
+    <label for="SKU">SKU</label>
+      <input required type="text" name="SKU" id="SKU"><br/>
+      <label for="name">Name</label>
+      <input required type="text" name="name" id="name"><br/>
+      <label for="price">Price ($)</label>
+      <input required type="text" name="price" id="price"><br/>
+      <p class="main-switcher">Type:</p>
+      <div class="dropdown main-dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Type Switcher
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" id="dvd">DVD</a></li>
+    <li><a class="dropdown-item" id="furniture">Furniture</a></li>
+    <li><a class="dropdown-item" id="book">Book</a></li>
+  </ul>
+</div>
+    <div class="main-dvdForm" id="dvd">
+        <label for="size">Size (MB)</label>
+        <input type="number" name="size" id="dvd">
+        <p class="main-dvdForm-p">Please provide size in "SIZE (MB)" format</p>
+    </div>
+    <div class="main-furnitureForm" id="furniture">
+    <label for="size">Height (CM)</label>
+        <input type="number" name="height" id="furniture_height">
+    <label for="size">Width (CM)</label>
+        <input type="number" name="width" id="furniture_width">
+    <label for="size">Length (CM)</label>
+        <input type="number" name="length" id="furniture_lenght">
+        <p class="main-furnitureForm-p">Please provide dimentions in "HeightxWidthxLenght" format</p>
+    </div>
+    <div class="main-bookForm" id="book">
+    <label for="weight">Weight (KG)</label>
+        <input type="number" name="weight" id="dvd">
+        <p class="main-dvdForm-p">Please provide weight in "WEIGHT (KG)" format</p>
+    </div>
+    <input class="main-saveBtn"  type="submit" value="SAVE">
+    </form>
+    <hr class="main-hr">
+    <h3 class="main-h3">Scandiweb Test Assigment</h3>
+    </div>
+    </main>
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+<script src="js/jquery.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
