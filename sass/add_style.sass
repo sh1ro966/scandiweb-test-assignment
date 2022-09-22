@@ -11,35 +11,82 @@
     margin: 0 auto 
 
 
-.header
-    padding-top: 50px
-    h1
+.nav
+    padding-top: 30px
+    &-title
         margin-left: 30px
-    hr
+    &-hr
+        width: 100%
         margin-top: 20px
     &-buttons
         position: absolute
-        right: 0
-        top: 10px
+        right: 12px
+        top: 45px
         margin-right: 30px
-    &-cancelBtn
+    &-cancel-btn
         border: 1px solid black
+        border-radius: 3px
         a   
             padding: 0 2px 0 2px
             color: black
             text-decoration: none 
+    &-save-btn
+        border: 1px solid black
+        padding: 0 2px 0 2px
+        border-radius: 3px
 .main
     &-form
         display: block
-        margin-top: 50px
         label
             display: block
             float: left
-            width: 70px
+            width: 80px
             height: 15px
             margin-top: 20px
         input
             margin-top: 20px
+        label.error
+            color: red
+        label#sku-error.error
+            position: absolute
+            width: 200px
+            left: 275px
+            top: 123px
+        label#name-error.error
+            position: absolute
+            width: 200px
+            left: 275px
+            top: 172px
+        label#price-error.error
+            position: absolute
+            width: 200px
+            left: 275px
+            top: 220px
+        label#size-error.error
+            position: absolute
+            width: 200px
+            left: 110px
+            top: 50px
+        label#height-error.error
+            position: absolute
+            width: 200px
+            left: 130px
+            top: 45px
+        label#width-error.error
+            position: absolute
+            width: 200px
+            left: 130px
+            top: 95px
+        label#length-error.error
+            position: absolute
+            width: 200px
+            left: 130px
+            top: 142px
+        label#weight-error.error
+            position: absolute
+            width: 200px
+            left: 110px
+            top: 50px
     &-switcher
         margin-left: 10px
         display: block
@@ -48,7 +95,7 @@
         height: 15px
         margin-top: 35px
     &-dropdown
-        margin-top: 30px
+        margin-top: 36px
     &-dvdForm
         display: none
         position: relative
@@ -94,19 +141,15 @@
             bottom: 10px
         &-active
             display: block
+.footer
+    position: relative
     &-hr
         position: absolute
-        bottom: -560px
+        bottom: -603px
         width: 100%
-    &-h3
+    &-text
         position: absolute
-        bottom: -586px
-        left: 630px
+        bottom: -629px
+        left: 618px
         font-size: 15px
         text-align: center
-    &-saveBtn
-        position: absolute
-        top: -129px
-        right: 100px
-        border: 1px solid black
-        padding: 0 2px 0 2px
